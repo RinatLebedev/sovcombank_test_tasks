@@ -3,7 +3,6 @@ package tests.api.cleanuri_tests;
 import api_helpers.Specifications;
 import base.BaseApiTest;
 import base.FileReader;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

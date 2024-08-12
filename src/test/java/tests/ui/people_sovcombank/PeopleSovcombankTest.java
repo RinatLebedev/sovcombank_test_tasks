@@ -19,12 +19,13 @@ public class PeopleSovcombankTest extends BasePage {
 
     @Test
     @DisplayName("Проверка отображения названия города в списке вакансий при поиске по городу и компании")
-    public void CheckingCityInVacanciesList(){
+    public void CheckingCityInVacanciesList() throws InterruptedException {
         peopleSovcombankMainPage = new PeopleSovcombankMainPage(PEOPLE_SOVCOMBANK_MAIN_PAGE_URL);
-        peopleSovcombankVacanciesPage = new PeopleSovcombankVacanciesPage(VACANCIES_BUTTON);
         closePopUpIfExist();
+        peopleSovcombankVacanciesPage = new PeopleSovcombankVacanciesPage(VACANCIES_BUTTON);
         peopleSovcombankVacanciesPage.selectCity();
         peopleSovcombankVacanciesPage.selectCompany();
+
         checkTextContains(convertElementsCollectionToArrayList(VACANCIES_SPAN_COLLECTION), "Москва", "Вся Россия") ;
 
     }

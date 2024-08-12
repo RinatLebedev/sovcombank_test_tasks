@@ -18,7 +18,8 @@ public class PeopleSovcombankSteps extends BasePage {
         return element.isDisplayed();
     }
 
-    public static void closePopUpIfExist(){
+    public static void closePopUpIfExist() throws InterruptedException {
+        Thread.sleep(10000);
         if(checkPopUp(CHECK_POP_UP)){
             closePopUp(CLOSE_POP_UP);
         }

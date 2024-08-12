@@ -8,13 +8,13 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class BaseApiTest {
-    public static final String ServicesUrlCollectionFilePath = "src/test/java/api_helpers/files/services_url_collection.txt";
-    public static final String UrlCollectionFilePath = "src/test/java/api_helpers/files/url_collection.txt";
-    public static final String EndpointsFilePath = "src/test/java/api_helpers/files/endpoints.txt";
-    public static final String BaseUrlFilePath = "src/test/java/api_helpers/files/base_url.json";
+
+    public static final String ServicesUrlCollectionFilePath = "src/test/resources/services_url_collection.txt";
+    public static final String UrlCollectionFilePath = "src/test/resources/url_collection.txt";
+    public static final String EndpointsFilePath = "src/test/resources/endpoints.txt";
+    public static final String BaseUrlFilePath = "src/test/resources/base_url.json";
 
     public static String getResourceAsString(String path) {
         try {

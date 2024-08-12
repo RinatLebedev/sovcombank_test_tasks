@@ -40,6 +40,7 @@ public class CleanuriNegativeApiTests extends BaseApiTest {
     public void SendingUncorrectMethodRequestTest(){
         String URL = FileReader.getProperty(ServicesUrlCollectionFilePath,"cleanUri_url");
         Specifications.installSpecification(Specifications.requestSpec(URL));
+
         String body = getResourceAsString(BaseUrlFilePath)
                 .replace("base_url", FileReader.getProperty(UrlCollectionFilePath, "base_url_1"));
         List<String> list = List.of("GET", "PUT", "DELETE", "PATCH", "HEAD");
@@ -56,6 +57,7 @@ public class CleanuriNegativeApiTests extends BaseApiTest {
     public void SendingUrlInParamRequestTest(){
         String URL = FileReader.getProperty(ServicesUrlCollectionFilePath,"cleanUri_url");
         Specifications.installSpecification(Specifications.requestSpec(URL));
+
         String param = getResourceAsString(BaseUrlFilePath)
                 .replace("base_url", FileReader.getProperty(UrlCollectionFilePath, "base_url_1"));
 
@@ -66,7 +68,7 @@ public class CleanuriNegativeApiTests extends BaseApiTest {
                 .then().log().all()
                 .extract().response();
 
-        response.then().assertThat().statusCode(405);
+        response.then().assertThat().statusCode(400);
     }
 
     @Test
@@ -80,6 +82,4 @@ public class CleanuriNegativeApiTests extends BaseApiTest {
 
         response.then().assertThat().statusCode(404);
     }
-
-
 }

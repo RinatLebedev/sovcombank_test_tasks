@@ -19,11 +19,13 @@ public class DemoqaNegativeUiTests extends BasePage {
     @DisplayName("Валидация поля 'Name'")
     public void nameFieldValidation(){
         demoqaMainPage = new DemoqaMainPage(DEMOQA_URL);
+
         ArrayList <String> params = new ArrayList<>();
         params.add("ч");
         params.add("h");
         params.add("%");
         params.add("9");
+
         for (String param: params) {
             demoqaMainPage.fillingFirstNameField(param);
             demoqaMainPage.fillingLastNameField("last_name");
@@ -35,7 +37,9 @@ public class DemoqaNegativeUiTests extends BasePage {
             demoqaMainPage.changeYearInDateOfBirthField("2000");
             demoqaMainPage.changeDateInDateOfBirthField("1", "1");
             demoqaMainPage.clickToSubmitButton();
+
             checkModalWindowAppeared();
+
             closeModalWindowButtonClick();
         }
     }
@@ -44,9 +48,11 @@ public class DemoqaNegativeUiTests extends BasePage {
     @DisplayName("Валидация поля 'Email'")
     public void emailFieldValidation() {
         demoqaMainPage = new DemoqaMainPage(DEMOQA_URL);
+
         ArrayList<String> positive_params = new ArrayList<>();
         positive_params.add("h@mail.ru");
         positive_params.add("1@mail.indox");
+
         for (String param: positive_params) {
             demoqaMainPage.fillingFirstNameField("first_name");
             demoqaMainPage.fillingLastNameField("last_name");
@@ -58,7 +64,10 @@ public class DemoqaNegativeUiTests extends BasePage {
             demoqaMainPage.changeYearInDateOfBirthField("2000");
             demoqaMainPage.changeDateInDateOfBirthField("1", "1");
             demoqaMainPage.clickToSubmitButton();
+
             checkModalWindowAppeared();
+
+
             closeModalWindowButtonClick();
         }
 
@@ -79,7 +88,9 @@ public class DemoqaNegativeUiTests extends BasePage {
             demoqaMainPage.changeYearInDateOfBirthField("2000");
             demoqaMainPage.changeDateInDateOfBirthField("1", "1");
             demoqaMainPage.clickToSubmitButton();
+
             checkModalWindowNotAppeared();
+
             EMAIL_XPATH.clear();
         }
     }
@@ -101,7 +112,9 @@ public class DemoqaNegativeUiTests extends BasePage {
             demoqaMainPage.changeYearInDateOfBirthField("2000");
             demoqaMainPage.changeDateInDateOfBirthField("1", "1");
             demoqaMainPage.clickToSubmitButton();
+
             checkModalWindowAppeared();
+
             closeModalWindowButtonClick();
         }
 
@@ -122,7 +135,9 @@ public class DemoqaNegativeUiTests extends BasePage {
             demoqaMainPage.changeYearInDateOfBirthField("2000");
             demoqaMainPage.changeDateInDateOfBirthField("1", "1");
             demoqaMainPage.clickToSubmitButton();
+
             checkModalWindowNotAppeared();
+
             EMAIL_XPATH.clear();
             MOBILE_XPAHT.clear();
         }
@@ -142,6 +157,7 @@ public class DemoqaNegativeUiTests extends BasePage {
         demoqaMainPage.changeYearInDateOfBirthField("2025");
         demoqaMainPage.changeDateInDateOfBirthField("1", "1");
         demoqaMainPage.clickToSubmitButton();
+
         checkModalWindowAppeared();
     }
 }

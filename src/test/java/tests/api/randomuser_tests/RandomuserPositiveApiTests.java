@@ -37,15 +37,18 @@ public class RandomuserPositiveApiTests extends BaseApiTest {
     public void SendingGetMethodWithParams(){
         String URL = FileReader.getProperty(ServicesUrlCollectionFilePath,"randomuser_url");
         Specifications.installSpecification(Specifications.requestSpec(URL));
+
         LinkedHashMap <String, Object> params = new LinkedHashMap<>();
         params.put("gender", "female");
         params.put("nat", "CH");
+
         Response response = given()
                 .params(params)
                 .when()
                 .request("GET", FileReader.getProperty(EndpointsFilePath, "randomuser_endpoint"))
                 .then().log().all()
                 .extract().response();
+
         JsonPath jsonPath = response.jsonPath();
         ArrayList<String> result_gender = jsonPath.get("results.gender");
         ArrayList<String> result_nat = jsonPath.get("results.nat");
