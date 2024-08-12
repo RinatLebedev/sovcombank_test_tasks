@@ -1,0 +1,2 @@
+cleanUri_url = https://cleanuri.com
+randomuser_url = https://randomuser.me

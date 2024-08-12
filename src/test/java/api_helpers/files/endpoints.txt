@@ -1,0 +1,4 @@
+cleanUri_endpoint = /api/v1/shorten
+cleanUri_uncorrect_endpoint = /api/v1/short
+randomuser_endpoint = /api
+randomuser_uncorrect_endpoint = /random
